@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_c_make_test_1706857186173-push-trigger-input-set
+  identifier: Build_c_make_test_1706857186173pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: RaghavTest
+  pipeline:
+    identifier: Build_c_make_test_1706857186173
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
