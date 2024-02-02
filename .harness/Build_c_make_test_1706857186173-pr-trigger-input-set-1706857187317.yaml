@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_c_make_test_1706857186173-pr-trigger-input-set
+  identifier: Build_c_make_test_1706857186173prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: RaghavTest
+  pipeline:
+    identifier: Build_c_make_test_1706857186173
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
