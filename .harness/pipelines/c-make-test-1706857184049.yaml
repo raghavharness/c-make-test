@@ -1,0 +1,47 @@
+pipeline:
+  identifier: Build_c_make_test_1706857186173
+  name: Build c-make-test
+  orgIdentifier: default
+  projectIdentifier: RaghavTest
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.CItestGitConnectorVs732k7N3m
+        repoName: c-make-test
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: buildmake
+                  name: build make
+                  spec:
+                    command: make
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: makelint
+                  name: make lint
+                  spec:
+                    command: make lint
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: runtests
+                  name: run tests
+                  spec:
+                    command: make test
+                  timeout: ""
+                  type: Run
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
